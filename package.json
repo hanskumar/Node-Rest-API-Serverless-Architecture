@@ -1,0 +1,19 @@
+{
+  "name": "serverless-node.js-rest-api",
+  "version": "1.0.0",
+  "description": "Serverless Node.js Rest API using Lambda Functions and dynomoDB",
+  "main": "handler.js",
+  "scripts": {
+    "dev": "serverless offline start --port 8484",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hansh kumar",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.858.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "serverless-offline": "^6.8.0",
+    "uuid": "^8.3.2"
+  }
+}
