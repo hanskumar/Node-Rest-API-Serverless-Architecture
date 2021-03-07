@@ -44,11 +44,11 @@ module.exports.createProduct = (event, context, callback) => {
       }
 
       const response = {
-          statusCode: 201,
-          body: JSON.stringify(data.Item)
-      };
+        statusCode: 200,
+        body: JSON.stringify({ "message":"Product Added Successfully" })
+    };
 
-      callback(null, response);
+    callback(null, response);
 
   });
 }
@@ -67,12 +67,15 @@ module.exports.getProducts = (event, context, callback) => {
           return;
       }
 
-      const response = {
-          statusCode: 200,
-          body: JSON.stringify(data.Item)
-      };
+        const response = data ? {
+            statusCode: 200,
+            body: JSON.stringify(data)
+        }: {
+            statusCode: 404,
+            body: JSON.stringify({ "message" : 'Products not found' })
+        }; 
 
-      callback(null, response);
+        callback(null, response);
   });
 
 };
